@@ -27,10 +27,6 @@ class MemberRehearsalHistoryController extends RestfulController<MemberRehearsal
             return
         }
 
-        println memberRehearsalDTO.member.id
-        println memberRehearsalDTO.rehearsal.id
-
-
         def memReh = MemberRehearsalHistory.findByMemberAndRehearsal(memberRehearsalDTO.member, memberRehearsalDTO.rehearsal)
         println memReh
 

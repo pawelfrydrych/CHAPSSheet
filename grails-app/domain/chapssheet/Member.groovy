@@ -7,7 +7,7 @@ class Member {
     String surname
 
 
-    static hasMany = [rehearsal: Rehearsal]
+    static hasMany = [rehearsals: Rehearsal]
     static belongsTo = Rehearsal
 
     static mapping = {
@@ -16,7 +16,7 @@ class Member {
         name column: 'name'
         surname column: 'surname'
         voice column: 'voice'
-        rehearsal joinTable: [name: 'member_rehearsal', key: 'member_id', column: 'rehearsal_id']
+        rehearsals joinTable: [name: 'member_rehearsal', key: 'member_id', column: 'rehearsal_id']
     }
 
 
