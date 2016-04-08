@@ -7,26 +7,6 @@ class Member {
     String surname
 
 
-    /**
-     * Przydział głosowy
-     */
-    Voice voice
-
-    /**
-     * Obecność na konkretnej próbie
-     */
-//    boolean attendance
-
-    /**
-     * Wartość liczbowa wyrażana w minutach dot. spóźnienia
-     */
- //   Integer delay
-
-    /**
-     * Wartość liczbowa wyrażana w minutach dot. opuszczenia próby przed końcem
-     */
-    //Integer out
-
     static hasMany = [rehearsal: Rehearsal]
     static belongsTo = Rehearsal
 
