@@ -41,12 +41,6 @@ class RehearsalController extends RestfulController<Rehearsal> {
             Date dateStart = rehearsalDTO.dateStart;
             Date dateEnd = dateStart + (rehearsalLenght).minutes + 15.minutes
 
-
-            println('totalminutes ' + totalMinutes)
-            println ('howManyReh' + howManyRehearsalInOneRehearsal)
-            println ('rehearsalLeng' + rehearsalLenght)
-            println ('dateStar' + dateStart)
-
             for(int i = 1; i <= howManyRehearsalInOneRehearsal; i++)
             {
                 if(i == howManyRehearsalInOneRehearsal)
