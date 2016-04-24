@@ -1,8 +1,5 @@
 package chapssheet
 
-import grails.rest.Resource
-
-@Resource(uri='/api/rehearsals', formats = ['json'])
 class Rehearsal {
 
     /**
@@ -20,6 +17,8 @@ class Rehearsal {
      */
     Integer value
 
+    Integer breakCount
+
     static hasMany = [members: Member]
 
     static mapping = {
@@ -35,6 +34,7 @@ class Rehearsal {
         dateStart nullable: false
         dateEnd nullable: false
         value nullable: false
+        breakCount nullable: true
     }
 
 }
