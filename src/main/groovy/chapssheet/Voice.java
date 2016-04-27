@@ -13,6 +13,10 @@ public enum Voice {
 
     Alt_2,
 
+    Tenor_1,
+
+    Tenor_2,
+
     Bas_1,
 
     Bas_2
