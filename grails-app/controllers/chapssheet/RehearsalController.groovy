@@ -20,6 +20,11 @@ class RehearsalController extends RestfulController<Rehearsal> {
         super(resource)
     }
 
+    def show()
+    {
+        respond Rehearsal.findAll()
+    }
+
 
     def save(RehearsalDTO rehearsalDTO)
     {
@@ -32,9 +37,9 @@ class RehearsalController extends RestfulController<Rehearsal> {
         use(TimeCategory)
         {
 
+            def firstDateEnd = rehearsalDTO.dateEnd
             int totalMinutes = (rehearsalDTO.dateEnd - rehearsalDTO.dateStart).hours * 60 + (rehearsalDTO.dateEnd - rehearsalDTO.dateStart  ).minutes;
             int howManyRehearsalInOneRehearsal = rehearsalDTO.breakCount + 1
-            Rehearsal[] rehearsals = new Rehearsal[howManyRehearsalInOneRehearsal]
 
             int rehearsalLenght = ( totalMinutes - (rehearsalDTO.breakCount * 15) ) / howManyRehearsalInOneRehearsal
 
@@ -45,7 +50,8 @@ class RehearsalController extends RestfulController<Rehearsal> {
             {
                 if(i == howManyRehearsalInOneRehearsal)
                 {
-                    dateEnd = dateEnd - 15.minutes;
+                   // dateEnd = dateEnd - 15.minutes;
+                    dateEnd = firstDateEnd
                 }
 
                 Rehearsal rehearsal = new Rehearsal(dateStart: dateStart, dateEnd:

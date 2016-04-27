@@ -23,7 +23,7 @@ class MemberRehearsalHistoryController extends RestfulController<MemberRehearsal
 
         if(!memberRehearsalDTO.validate())
         {
-            respond citizenAlertDTO.errors
+            respond memberRehearsalDTO.errors
             return
         }
 
